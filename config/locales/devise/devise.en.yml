@@ -1,0 +1,22 @@
+# config/locales/en.devise.yml
+en:
+  devise:
+    sessions:
+      signed_in: "Login Successful"
+      signed_out: "Logout Successful"
+      not_found: "User not found"
+      invalid_email_or_password: "Invalid email or password"
+      not_activated: "Your account is not activated. Please check your email for the activation link."
+    omniauth_callbacks:
+      setup_password_required: "Please complete your account setup by adding a password."
+      oauth_success: "Successfully logged in with Google!"
+      oauth_error: "There was an error with Google authentication. Please try again."
+      oauth_failure: "OAuth authentication failed. Please try again."
+    failure:
+      invalid: "Invalid email or password."
+      user:
+        invalid: "Invalid email or password."
+      unconfirmed: "Your account is not confirmed yet."
+      locked: "Your account is locked."
+      timeout: "Your session has expired. Please log in again."
+      not_found_in_database: "Email not found."

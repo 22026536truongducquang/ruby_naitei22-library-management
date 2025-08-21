@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   USER_PERMIT = %i(name email password password_confirmation date_of_birth
 gender).freeze
   USER_OAUTH_SETUP_PERMIT = %i(password password_confirmation date_of_birth
@@ -9,11 +11,10 @@ gender).freeze
   FAVORITE_AUTHORS_INCLUDES = [:books, :favorites,
 {image_attachment: :blob}].freeze
 
-  has_secure_password
-  # has_secure_password cung cấp: # rubocop:disable Style/AsciiComments
-  # - Các thuộc tính ảo: password, password_confirmation # rubocop:disable Style/AsciiComments
-  # - Trường password_digest để lưu hash # rubocop:disable Style/AsciiComments
-  # - Phương thức authenticate(password) để xác thực # rubocop:disable Style/AsciiComments
+  devise :database_authenticatable, :rememberable, :validatable,
+         :confirmable, :lockable, :recoverable, :omniauthable,
+         :registerable
+
   has_one_attached :avatar
 
   enum role: {user: 0, admin: 1, super_admin: 2}
@@ -215,7 +216,7 @@ gender).freeze
       return false
     end
 
-    (password_digest.blank? || !password.nil?) && !oauth_user?
+    (encrypted_password.blank? || !password.nil?) && !oauth_user?
   end
 
   def password_presence_if_confirmation_provided

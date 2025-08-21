@@ -1,0 +1,22 @@
+# config/locales/vi.devise.yml
+vi:
+  devise:
+    sessions:
+      signed_in: "Đăng nhập thành công"
+      signed_out: "Đăng xuất thành công"
+      not_found: "Người dùng không tồn tại"
+      invalid_email_or_password: "Email hoặc mật khẩu không hợp lệ"
+      not_activated: "Tài khoản của bạn chưa được kích hoạt. Vui lòng kiểm tra email để kích hoạt."
+    omniauth_callbacks:
+      setup_password_required: "Vui lòng hoàn tất thiết lập tài khoản bằng cách thêm mật khẩu."
+      oauth_success: "Đăng nhập bằng Google thành công!"
+      oauth_error: "Đã có lỗi xảy ra khi xác thực Google. Vui lòng thử lại."
+      oauth_failure: "Xác thực OAuth thất bại. Vui lòng thử lại."
+    failure:
+      invalid: "Email hoặc mật khẩu không hợp lệ."
+      user:
+        invalid: "Email hoặc mật khẩu không hợp lệ."
+      unconfirmed: "Tài khoản của bạn chưa được xác nhận."
+      locked: "Tài khoản của bạn đã bị khóa."
+      timeout: "Phiên làm việc của bạn đã hết hạn. Vui lòng đăng nhập lại."
+      not_found_in_database: "Không tìm thấy email trong hệ thống."
